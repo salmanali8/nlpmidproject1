@@ -29,4 +29,24 @@ try:
     X = df['text']
     y = df['category']
 
-    # Rest of your code for model training and prediction remains the same...
+    # Create a text classification pipeline using TF-IDF vectorization and Linear SVM
+    # For example:
+    # from sklearn.feature_extraction.text import TfidfVectorizer
+    # from sklearn.svm import SVC
+    # from sklearn.pipeline import make_pipeline
+    # model = make_pipeline(TfidfVectorizer(), SVC(kernel='linear'))
+    # model.fit(X, y)
+
+    # Text input for prediction
+    st.write('Enter a sentence to predict its category:')
+    user_input = st.text_input('Enter a sentence:', '')
+
+    # Make predictions based on user input
+    if user_input:
+        # Prediction logic with the trained model (adjust based on your model)
+        # prediction = model.predict([user_input])
+        # st.write(f'Predicted Category: {prediction[0]}')
+        st.write("Prediction functionality needs to be implemented.")
+
+except Exception as e:
+    st.write("Error:", e)
