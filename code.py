@@ -6,7 +6,7 @@ from sklearn.pipeline import make_pipeline
 
 # Streamlit app starts here
 st.title('Text Category Prediction')
-st.write('GitHub Dataset Access')
+st.markdown('### Predict the Category of a Sentence')
 
 # Raw URL of the CSV file in your GitHub repository
 file_url = 'https://raw.githubusercontent.com/salmanali8/nlpmidproject1/CODE-WITH-SA/bbc-text.csv'  # Replace with your raw CSV file URL
@@ -26,13 +26,13 @@ try:
     model.fit(X, y)
 
     # Text input for prediction
-    st.write('Enter a sentence to predict its category:')
-    user_input = st.text_input('Enter a sentence:', '')
+    st.sidebar.header('Enter a sentence to predict its category:')
+    user_input = st.sidebar.text_input('', '')
 
     # Make predictions based on user input
     if user_input:
         prediction = model.predict([user_input])
-        st.write(f'Predicted Category: {prediction[0]}')
+        st.success(f'Predicted Category: {prediction[0]}')
 
 except Exception as e:
     st.write("Error:", e)
