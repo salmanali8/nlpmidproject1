@@ -51,3 +51,4 @@ try:
         st.write(f'Predicted Category: {prediction[0]}')
 except Exception as e:
     st.write("Error:", e)
+
